@@ -25,7 +25,7 @@
                     let url = X.name.endsWith("ボックス") ? infoUrl : eventUrl;
 
                     html += '<tr><td width="300px"><p>' + X.date;
-                    html += ' <a href="' + url + X.pageId + '">' + X.name + '</a></p>';
+                    html += ' <a href="' + url + X.pageId + '" target="_blank" rel="noopener noreferrer">' + X.name + '</a></p>';
                     if( X.weaName ) { html += '<p>武器：' + X.weaName + '</p>'; }
                     if( X.liqName ) { html += '<p>リキュール：' + X.liqName+ '</p>'; }
                     if( X.effName ) { html += '<p>エフェクト：' + X.effName+ '</p>'; }
