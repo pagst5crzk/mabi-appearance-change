@@ -18,7 +18,7 @@
         }
 
         function makeTable(key) {
-            let html = '<h2>呪文書＆リキュール＆エフェクト - ' + key + '</h2>'
+            let html = '<h2> - ' + key + ' -</h2>'
                 + '<table border="1" style="border-collapse: collapse">';
 
             datam.forEach(X => {
