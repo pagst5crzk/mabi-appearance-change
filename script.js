@@ -22,7 +22,7 @@
                 + '<table border="1" style="border-collapse: collapse">';
 
             datam.forEach(X => {
-                if (X.date.includes(key) || X.name.includes(key) || X.weaName.includes(key) || X.liqName.includes(key) || X.effName.includes(key) || X.titleNames.includes(key))
+                if (X.date.includes(key) || X.name.includes(key) || X.weaName.includes(key) || X.liqName.includes(key) || X.effName.includes(key) || X.titleName.includes(key))
                 {
                     let url = X.name.endsWith("ボックス") ? infoUrl : eventUrl;
 
@@ -30,21 +30,26 @@
                     html += ' <a href="' + url + X.pageId + '" target="_blank" rel="noopener noreferrer">' + X.name + '</a></p>';
 
                     let imgs = "";
-
-                    function nameSplitImg(label, str)
+                    let num1 = 0;
+                    let num2 = 0;
+                    function nameSplitImg(label, str, str2)
                     {
-                        const sub = str.split("|");
-                        if(sub.length == 2 && sub[0])
+                        if(str)
                         {
-                            html += '<p>' + label + sub[0] + '</p>';
-                            imgs += sub[1] + "/";
+                            html += '<p>' + label + str + '</p>';
+                            imgs += str2 + "/";
+
+                            num1 += str.split("/").length;
+                            num2 += str2.split("/").length;
                         }
                     }
 
-                    nameSplitImg("武器：", X.weaName );
-                    nameSplitImg("リキュール：", X.liqName );
-                    nameSplitImg("エフェクト：", X.effName );
-                    nameSplitImg("2次タイ：", X.titleNames );
+                    nameSplitImg("武器：", X.weaName, X.weaImg );
+                    nameSplitImg("リキュール：", X.liqName, X.liqImg );
+                    nameSplitImg("エフェクト：", X.effName, X.effImg );
+                    nameSplitImg("2次タイ：", X.titleName, X.titleImg );
+
+                    html += '<p>' + num1 + "," + num2 + '</p>'
 
                     html += '</td><td>';
                     html += images(X.base, imgs);
