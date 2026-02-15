@@ -24,7 +24,8 @@
             datam.forEach(X => {
                 if (X.date.includes(key) || X.name.includes(key) || X.weaName.includes(key) || X.liqName.includes(key) || X.effName.includes(key) || X.titleName.includes(key))
                 {
-                    let url = X.name.endsWith("ボックス") ? infoUrl : eventUrl;
+                    //let url = X.name.endsWith("ボックス") ? infoUrl : eventUrl;
+                    let url = infoUrl;
 
                     html += '<tr><td width="300px"><p>' + X.date;
                     html += ' <a href="' + url + X.pageId + '" target="_blank" rel="noopener noreferrer">' + X.name + '</a></p>';
