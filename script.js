@@ -56,7 +56,10 @@ function makeTable(key) {
             html += '</td></tr>';
         }
     });
-    return html + '</table>';
+	html += '</table>';
+
+	html += '<div class="bottom">last update: ' + LastUpdate + '</div>';
+    return html;
 }
 
 const targetArea = document.getElementById('target-area');
