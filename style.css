@@ -7,10 +7,11 @@ table {
 td {
   border: solid 1px;  /* 枠線指定 */
   padding: 3px;
+  font-size: 13px;
 }
 
 img, video {
-  height: 240px;
+  height: 200px;
 }
 
 button {
